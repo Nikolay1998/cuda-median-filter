@@ -61,9 +61,9 @@ int main()
 	float tcpu, tgpu, tgpushared; //timing variables.
 	clock_t start, end;
 
-	originalImage->Load("input.bmp");
-	resultImageCPU->Load("input.bmp");
-	resultImageGPU->Load("input.bmp");
+	originalImage->Load("../images/input.bmp");
+	resultImageCPU->Load("../images/input.bmp");
+	resultImageGPU->Load("../images/input.bmp");
 	std::cout << "Operating on a " << originalImage->Width() << " x " << originalImage->Height() << " image..." << std::endl;
 	start = clock(); //Stat the clock
 	for (int i = 0; i < ITERATIONS; i++)
@@ -80,6 +80,6 @@ int main()
 		MedianFilterGPU(originalImage, resultImageGPU);
 	}
 
-	resultImageCPU->Save("output_cpu.bmp");
-	resultImageGPU->Save("output_gpu.bmp");
+	resultImageCPU->Save("../images/output_cpu.bmp");
+	resultImageGPU->Save("../images/output_gpu.bmp");
 }
